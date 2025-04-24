@@ -1,13 +1,205 @@
-body {
+/* index.css */
+@import url('https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@300;400;500;700&display=swap');
+
+/* Netflix 2024 Design System */
+:root {
+  --nf-red: #e50914;
+  --nf-black: #000000;
+  --nf-dark-gray: #141414;
+  --nf-mid-gray: #2F2F2F;
+  --nf-light-gray: #808080;
+  --nf-white: #FFFFFF;
+  --nf-hover-red: #F40612;
+  --nf-gradient: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.7) 10%,
+    rgba(0, 0, 0, 0.4) 40%,
+    rgba(0, 0, 0, 0.4) 60%,
+    rgba(0, 0, 0, 0.7) 90%
+  );
+}
+
+/* Netflix Base Styles */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 62.5%;
+  background-color: var(--nf-black);
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: var(--nf-white);
+  line-height: 1.4;
+}
+
+/* Netflix Typography */
+h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 1.6rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: var(--nf-white);
+  opacity: 0.9;
+}
+
+/* Netflix Components */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 68px;
+  padding: 0 4%;
+  display: flex;
+  align-items: center;
+  background-image: var(--nf-gradient);
+  z-index: 1000;
+}
+
+.nav-logo {
+  width: 92px;
+  height: 31px;
+  fill: var(--nf-red);
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-position: center top;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 14.7rem;
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgba(20, 20, 20, 0.6),
+    var(--nf-dark-gray)
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 15vw 4% 0;
+  max-width: 800px;
+}
+
+.button-group {
+  display: flex;
+  gap: 1.6rem;
+  margin-top: 2.4rem;
+}
+
+.nf-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8rem 2.4rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+}
+
+.nf-btn-primary {
+  background: var(--nf-white);
+  color: var(--nf-black);
+}
+
+.nf-btn-primary:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.nf-btn-secondary {
+  background: rgba(109, 109, 110, 0.7);
+  color: var(--nf-white);
+}
+
+.nf-btn-secondary:hover {
+  background: rgba(109, 109, 110, 0.4);
+}
+
+/* Card Styles (Netflix Row Items) */
+.card {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  z-index: 100;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgba(0, 0, 0, 0.8)
+  );
+}
+
+/* Responsive Design */
+@media (min-width: 960px) {
+  h1 {
+    font-size: 4.8rem;
+  }
+  
+  .hero {
+    height: 95vh;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+  
+  .nf-btn {
+    padding: 0.6rem 1.6rem;
+    font-size: 1.4rem;
+  }
 }

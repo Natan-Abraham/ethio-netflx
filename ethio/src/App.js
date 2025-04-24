@@ -1,10 +1,13 @@
+import React from "react";
+import "./App.css";
+import Home from "./Home/home"; 
 
-import './App.css';
+// Fetch trending content
 
 function App() {
   return (
-    <div className="App">
-     <h1> Welcome to Ethio Netflix </h1>
+    <div>
+      <Home /> {/* Use the Home component */}
     </div>
   );
 }

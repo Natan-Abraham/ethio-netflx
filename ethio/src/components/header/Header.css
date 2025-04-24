@@ -1,0 +1,83 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 68px;
+  padding: 0 4%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 10%, transparent);
+  z-index: 1000;
+  transition: background-color 0.4s ease-in-out;
+}
+
+.header__scrolled {
+  background-color: #141414;
+}
+
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.header__logo {
+  width: 92px;
+}
+
+.header__nav {
+  display: flex;
+  gap: 20px;
+}
+
+.header__nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.4s;
+}
+
+.header__nav a:hover {
+  color: #b3b3b3;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__icon {
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.header__profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header__profile img {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+}
+
+.header__dropdown {
+  color: white;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .header__nav {
+    display: none;
+  }
+  
+  .header__logo {
+    width: 80px;
+  }
+}
